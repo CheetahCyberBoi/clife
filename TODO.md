@@ -3,8 +3,7 @@
 - Added tick system, including ability to measure game performance
 
 # TODO
-- modify `get_cell_ll` to give an actual pointer to the cell (currently it copies it... gotta figure out how tho)
-- Create game logic
+- Create game logic (one thing, make a `find_neighbours()` fn that DOES NOT iteratively locate the neighbours)
 - Terminal interface (help commands, configuration, etc.)
 
 
