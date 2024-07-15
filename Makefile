@@ -1,7 +1,7 @@
-CFLAGS = -std=c17 -O2
+CFLAGS = -std=gnu11 -O2
 # LDFLAGS = 
 clife: 
-	clang $(CFLAGS) -o main src/*.c -g $(LDFLAGS)
+	clang $(CFLAGS) -o main src/*.c
 
 .PHONY: test clean
 
