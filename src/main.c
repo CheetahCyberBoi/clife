@@ -74,13 +74,14 @@ void dbg_print_grid(state_t* state) {
 
 //Initializes the cell linked-list and grid, allocating it on the heap and giving a pointer to the first one. 
 void init_grid(state_t* state, size_t size_x, size_t size_y) {
-  cell_t* cell_alloc = (cell_t*)malloc(sizeof(cell_t) * size_x * size_y);
+  //Acquire a zeroed out buffer of cells.
+  cell_t* cell_alloc = (cell_t*)calloc(size_x * size_y, sizeof(cell_t));
 
   if (cell_alloc == NULL) {
     perror("clife: failed to allocate space for cell grid");
     exit(1);
   }
-  memset((void*)cell_alloc, 0, sizeof(cell_t) * size_x * size_y);  
+
   //Safely have the head of the list - time to go
   for (int i = 0; i < size_x * size_y; i++) {
     //printf("On cell index: %d, coords: (%d, %d)", i, i % size_x, i % size_y);
